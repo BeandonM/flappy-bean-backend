@@ -28,9 +28,17 @@ const getTopMonth = (req, res) =>{
         res.status(200).json(results.rows);
     });
 }
+
+const getTopAllTime = (req, res) =>{
+    pool.query(queries.getTopAllTime, (error, results) =>{
+        if(error) throw error;
+        res.status(200).json(results.rows);
+    });
+}
 module.exports = {
     getScores,
     getTopHour,
     getTopDay,
     getTopMonth,
+    getTopAllTime,
 };
