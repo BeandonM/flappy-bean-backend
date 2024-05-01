@@ -5,6 +5,7 @@ const router = Router();
 router.get('/', controller.getScores);
 router.get('/hour', controller.getTopHour);
 router.get('/day', controller.getTopDay);
+router.get('/month', controller.getTopDay);
 
 
 
