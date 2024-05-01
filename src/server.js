@@ -11,6 +11,8 @@ app.get("/", (req, res) =>{
     res.send("Hello World");
 })
 
+app.use('/highscores',appRoutes);
+
 app.listen(port, () =>{
     console.log(`Server listening on port ${port}...`);
 })
