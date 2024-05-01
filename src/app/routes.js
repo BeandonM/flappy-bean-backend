@@ -4,5 +4,8 @@ const router = Router();
 
 router.get('/', controller.getScores);
 router.get('/hour', controller.getTopHour);
+router.get('/day', controller.getTopDay);
+
+
 
 module.exports = router;

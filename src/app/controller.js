@@ -15,7 +15,14 @@ const getTopHour = (req, res) =>{
     });
 }
 
+const getTopDay = (req, res) =>{
+    pool.query(queries.getTopDay, (error, results) =>{
+        if(error) throw error;
+        res.status(200).json(results.rows);
+    });
+}
 module.exports = {
     getScores,
     getTopHour,
+    getTopDay,
 };
