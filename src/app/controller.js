@@ -35,10 +35,24 @@ const getTopAllTime = (req, res) =>{
         res.status(200).json(results.rows);
     });
 }
+
+const addScore = (req, res) =>{
+    const {name, score} = req.body;
+
+    pool.query(queries.addScore, [name,score], (error,results) =>{
+        if(error)
+        {
+            throw error;
+        }
+        res.status(201).send("Score Created Successfully!");
+    });
+}
+
 module.exports = {
     getScores,
     getTopHour,
     getTopDay,
     getTopMonth,
     getTopAllTime,
+    addScore,
 };
